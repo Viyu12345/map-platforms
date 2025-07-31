@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon Explorer – Lost Cities</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f3e25;
+      color: #e0e0e0;
+    }
+    header {
+      background-color: #124e2d;
+      padding: 20px;
+      text-align: center;
+      color: #ffcc00;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: row;
+      background-color: #1a5035;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .section img {
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .section .text {
+      padding: 20px;
+      width: 50%;
+    }
+
+    .section .text h2 {
+      margin-top: 0;
+      color: #ffd700;
+    }
+
+    .section .text p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+
+      .section img,
+      .section .text {
+        width: 100%;
+      }
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background-color: #1f5727;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2fa03f;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+<header>
+    🌿 Amazon Explorer
+  </header>
+  <div class="container">
+    <!-- Section 1 -->
+    <div class="section">
+      <img src="amazon_-11.5_-55.5.png" alt="Img 1">
+      <div class="text">
+        <h2>11.5 degrees South and 55.5 degrees west</h2>
+        <p>
+          Heavy deforestation with finger-like erosion or remnants of tree cover. Forest patches left in ravines or low-lying valleys. Geometric patterns hinting at either: Old terra preta zones (dark earth) used by pre-Columbian societies, or Extensive modern agriculture with no direct evidence of ancient urban grids. This area is relatively close to known geoglyphs and possible settlement mounds found further west toward Acre and Rondônia. Has a mix of linear clearings, which could align with: Ancient road systems or settlement boundaries. Could be part of the Xingu River region or near the Guiana Shield. Could represent an area with elevated potential for undiscovered archaeological sites
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <img src="amazon_-13_-55.5.png" alt="Img 2">
+      <div class="text">
+        <h2>13 degree north and 55.5 degrees west</h2>
+        <p>
+          Similar patchwork deforestation. Noticeable grid-like patterns in the forest clearance which could resemble: Ancient road or settlement planning, Or modern-day rectangular farm plots. This area is not far from the Upper Xingu where anthropologist Michael Heckenberger discovered complex pre-Columbian settlements with road systems, plazas, and defensive moats. Rectangular or circular clearings within dense forest cover. These might indicate geoglyphs, ancient settlements, or terra preta regions. The clear geometry suggests man-made patterns, not natural ones. This can be the Ciudad de Z-like settlements
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+      <button class="btn" onclick="window.location.href='archaeologist.html'">Be an Archaeologist</button>
+      <button class="btn" onclick="window.location.href='home.html'">Home</button>
+    </div>
+<p>More blogs coming next week. Stay tuned..</p>
+</body>
+</html>

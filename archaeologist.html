@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon Explorer</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f3e25;
+      color: #f4f4f4;
+    }
+
+    header {
+      background-color: #124e2d;
+      padding: 20px;
+      text-align: center;
+      color: #ffcc00;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    gmp-map-3d {
+      width: 600px; /* Adjust the size as needed */
+      height: 400px;
+      border: 2px solid #ffcc00;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background-color: #1f5727;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2fa03f;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🌿 Amazon Explorer
+  </header>
+
+  <div id="map-container">
+    <gmp-map-3d
+      id="map"
+      mode="hybrid"
+      center="-3.4653, -62.2159"
+      range="2000"
+      tilt="75"
+      heading="330"
+    ></gmp-map-3d>
+  </div>
+  <div class="button-container">
+      <button class="btn" onclick="window.location.href='home.html'">Home</button>
+      <button class="btn" onclick="window.location.href='discoveries.html'">See the New Discoveries</button>
+    </div>
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzUSWsU38V2BDdFVDcW6ePhCeS1qBLeYY&v=beta&libraries=maps3d">
+  </script>
+
+  <script>
+    const init = async () => {
+      await google.maps.importLibrary('maps3d');
+      const map = document.querySelector('gmp-map-3d');
+
+      map.flyCameraTo({
+        endCamera: {
+          center: { lat: -3.4653, lng: -62.2159 },
+          tilt: 67.5,
+          range: 1000,
+        },
+        durationMillis: 5000,
+      });
+
+      map.addEventListener('gmp-animation-end', () => {
+        map.flyCameraAround({
+          camera: {
+            center: { lat: -3.4653, lng: -62.2159 },
+            tilt: 75,
+            range: 1000,
+            heading: 0
+          },
+          durationMillis: 30000,
+          rounds: 1
+        });
+      }, { once: true });
+    };
+
+    window.onload = init;
+  </script>
+</body>
+</html>
